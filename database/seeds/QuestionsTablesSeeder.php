@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Form;
 use App\Question;
+use Illuminate\Support\Facades\DB;
 
 class QuestionsTablesSeeder extends Seeder
 {
@@ -17,7 +18,7 @@ class QuestionsTablesSeeder extends Seeder
                 'title'      => 'Avaliação'
             ]);
 
-        Question::create(
+        DB::table("question")->insert(
             [
                 [
                     'form_id'   => $form->id,
