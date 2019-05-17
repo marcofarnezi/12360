@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/evaluation', 'ResponseEvaluationController@index')->name('evaluation');
+Route::get('/evaluation/{id}', 'EvaluationController@index')->name('evaluation');
+
