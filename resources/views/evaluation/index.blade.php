@@ -1,0 +1,1 @@
+Mostra as avaliações
