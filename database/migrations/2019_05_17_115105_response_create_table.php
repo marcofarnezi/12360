@@ -13,7 +13,11 @@ class ResponseCreateTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('response', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->int('user_id');
+            $table->int('form_id');
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class ResponseCreateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('response');
     }
 }

@@ -13,7 +13,12 @@ class QuestionsCreateTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('question', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->int('form_id');
+            $table->string('question');
+            $table->string('type');
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class QuestionsCreateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('question');
     }
 }

@@ -13,7 +13,12 @@ class AvaliationCreateTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('avaliation', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->int('question_id');
+            $table->int('user_id');
+            $table->string('response');
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class AvaliationCreateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('avaliation');
     }
 }

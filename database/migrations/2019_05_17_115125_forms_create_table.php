@@ -13,7 +13,10 @@ class FormsCreateTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('form', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class FormsCreateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('form');
     }
 }
