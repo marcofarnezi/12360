@@ -20,3 +20,5 @@ Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/evaluation/{id}', 'EvaluationController@index')->name('evaluation')->middleware('auth');
 Route::post('/evaluation', 'EvaluationController@save')->name('evaluation-save')->middleware('auth');
 
+Route::get('/rel/{id}', 'EvaluationController@show')->name('evaluation-rel')->middleware('auth');
+

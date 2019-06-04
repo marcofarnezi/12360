@@ -7,7 +7,7 @@ class Evaluation extends Model
 {
     protected $table = 'evaluation';
 
-    protected $fillable = ['question_id', 'user_id', 'response'];
+    protected $fillable = ['question_id', 'form_id', 'user_id', 'response'];
 
     public $timestamps = false;
 

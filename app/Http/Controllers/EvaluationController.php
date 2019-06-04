@@ -41,7 +41,8 @@ class EvaluationController extends Controller
                 Evaluation::insert([
                     'question_id' => $question_id,
                     'user_id' => $user_id,
-                    'response' => $response
+                    'response' => $response,
+                    'form_id' => $request->get('form_id')
                 ]);
             }
         }
@@ -58,15 +59,26 @@ class EvaluationController extends Controller
         return redirect('/');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Evaluation  $evaluation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Evaluation $evaluation)
+    public function show(Request $request)
     {
-        //
+        $responses = Evaluation::where('form_id', $request->id)->get();
+        $respUser = [];
+        foreach ($responses as $response) {
+            if (!empty($response->response)) {
+                if (is_numeric($response->response) && ! isset($respUser[$response->user_id][$response->question_id]['score'])) {
+                    $respUser[$response->user_id][$response->question_id]['score'] = 0;
+                    $respUser[$response->user_id][$response->question_id]['qnt'] = 0;
+                }
+
+                if (is_numeric($response->response)) {
+                    $respUser[$response->user_id][$response->question_id]['score'] += $response->response;
+                    $respUser[$response->user_id][$response->question_id]['qnt']++;
+                } else {
+                    $respUser[$response->user_id][$response->question_id]['obs'][] = $response->response;
+                }
+            }
+        }
+        dd($respUser);
     }
 
 }

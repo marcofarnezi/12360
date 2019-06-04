@@ -17,6 +17,7 @@ class EvaluationCreateTable extends Migration
             $table->bigIncrements('id');
             $table->int('question_id');
             $table->int('user_id');
+            $table->int('form_id');
             $table->string('response');
         });
     }
