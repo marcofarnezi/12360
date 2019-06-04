@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('/')->middleware('auth');
+Route::get('home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/evaluation/{id}', 'EvaluationController@index')->name('evaluation');
+Route::get('/evaluation/{id}', 'EvaluationController@index')->name('evaluation')->middleware('auth');
+Route::post('/evaluation', 'EvaluationController@save')->name('evaluation-save')->middleware('auth');
 

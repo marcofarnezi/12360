@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $forms = DB::table('form')
+        ->whereNotIn('id', DB::table('form')
+            ->join('response', 'form.id', '=', 'response.form_id')
+            ->where('response.user_id', '=', Auth::id())
+            ->select('form.id')
+        )->get();
+
+        return view('home', ['forms' => $forms]);
     }
 }
