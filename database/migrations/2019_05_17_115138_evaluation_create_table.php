@@ -18,7 +18,7 @@ class EvaluationCreateTable extends Migration
             $table->integer('question_id');
             $table->integer('user_id');
             $table->integer('form_id');
-            $table->string('response');
+            $table->string('response')->nullable();
         });
     }
 

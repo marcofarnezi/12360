@@ -21,6 +21,12 @@ class UsersTableSeeder extends Seeder
                     'is_admin'  => 0
                 ],
                 [
+                    'name'      => 'Marco Farnezi',
+                    'email'     => 'marco.farnezi@plataforma13.com.br',
+                    'password'  => bcrypt('123'),
+                    'is_admin'  => 1
+                ],
+                /*[
                     'name'      => 'Pedro Emiliano',
                     'email'     => 'pedro.emiliano@plataforma13.com.br',
                     'password'  => bcrypt('123'),
@@ -33,132 +39,150 @@ class UsersTableSeeder extends Seeder
                     'is_admin'  => 0
                 ],
                 [
-                    'name'      => 'Marco Farnezi',
-                    'email'     => 'marco.farnezi@plataforma13.com.br',
-                    'password'  => bcrypt('123'),
-                    'is_admin'  => 1
-                ],
-                [
                     'name'      => 'Luiz Gama',
-                    'login'     => 'luiz.gama@plataforma13.com.br',
+                    'email'     => 'luiz.gama@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Marcos Coelho',
-                    'login'     => 'marcos.coelho@plataforma13.com.br',
+                    'email'     => 'marcos.coelho@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Julia Amarante',
-                    'login'     => 'julia.amarante@plataforma13.com.br',
+                    'email'     => 'julia.amarante@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Atos Pontes',
-                    'login'     => 'atos.pontes@plataforma13.com.br',
+                    'email'     => 'atos.pontes@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Luís Fernando Bastos',
-                    'login'     => 'luisfernando.bastos@plataforma13.com.br',
+                    'email'     => 'luisfernando.bastos@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Marcos Matos Machado',
-                    'login'     => 'marcos.matos@plataforma13.com.br',
+                    'email'     => 'marcos.matos@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Ítallo Lima',
-                    'login'     => 'itallo.lima@plataforma13.com.br',
+                    'email'     => 'itallo.lima@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Ronan Cândido',
-                    'login'     => 'ronan.candido@plataforma13.com.br',
+                    'email'     => 'ronan.candido@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Lucas Barbosa',
-                    'login'     => 'lucas.barbosa@plataforma13.com.br',
+                    'email'     => 'lucas.barbosa@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Eugenio Michetti',
-                    'login'     => 'eugeniomichetti@plataforma13.com.br',
+                    'email'     => 'eugeniomichetti@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Josoé Queiroz',
-                    'login'     => 'josoe.queiroz@plataforma13.com.br',
+                    'email'     => 'josoe.queiroz@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Thiago Brumano',
-                    'login'     => 'thiago.brumano@plataforma13.com.br',
+                    'email'     => 'thiago.brumano@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'André Souza',
-                    'login'     => 'andre.souza@plataforma13.com.br',
+                    'email'     => 'andre.souza@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Fábio Santos Dias',
-                    'login'     => 'fabio.dias@plataforma13.com.br',
+                    'email'     => 'fabio.dias@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Sergisley Marciano Matias de Lima ',
-                    'login'     => 'sergisley.lima@plataforma13.com.br',
+                    'email'     => 'sergisley.lima@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Leonardo Padilha',
-                    'login'     => 'leonardo.padilha@plataforma13.com.br',
+                    'email'     => 'leonardo.padilha@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
 
                 [
                     'name'      => 'Brendo Oliveira',
-                    'login'     => 'brendo.oliveira@plataforma13.com.br',
+                    'email'     => 'brendo.oliveira@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Gabriela Carmo Nascimento',
-                    'login'     => 'gabriela.carmo@plataforma13.com.br',
+                    'email'     => 'gabriela.carmo@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Priscylla Mara dos Reis',
-                    'login'     => 'priscylla.reis@plataforma13.com.br',
+                    'email'     => 'priscylla.reis@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Marcelo Geovani',
-                    'login'     => 'marcelo.geovani@plataforma13.com.br',
+                    'email'     => 'marcelo.geovani@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Elker Lima',
-                    'login'     => 'elker.lima@plataforma13.com.br',
+                    'email'     => 'elker.lima@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Marcelo Fernandes',
-                    'login'     => 'marcelo.fernandes@plataforma13.com.br',
+                    'email'     => 'marcelo.fernandes@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Igor Coelho',
-                    'login'     => 'igor.coelho@plataforma13.com.br',
+                    'email'     => 'igor.coelho@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Justina Peixoto',
-                    'login'     => 'justina.peixoto@plataforma13.com.br',
+                    'email'     => 'justina.peixoto@plataforma13.com.br',
                     'password'  => bcrypt('123'),
-                ]
+                    'is_admin'  => 0
+                ]*/
             ]
         );
     }
