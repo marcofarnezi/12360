@@ -15,8 +15,8 @@ class ResponseCreateTable extends Migration
     {
         Schema::create('response', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->int('user_id');
-            $table->int('form_id');
+            $table->integer('user_id');
+            $table->integer('form_id');
         });
     }
 

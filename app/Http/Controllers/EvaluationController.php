@@ -9,6 +9,7 @@ use App\Response;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class EvaluationController extends Controller
 {
@@ -61,6 +62,23 @@ class EvaluationController extends Controller
 
     public function show(Request $request)
     {
+        if (Auth::user()->is_admin != 1) {
+            return redirect('/');
+        }
+        $userCount = User::count();
+        $formsWaiting = DB::table('form')
+            ->join('response', 'form.id', '=', 'response.form_id')
+            ->groupBy('form.id', 'form.title')
+            ->havingRaw('count(response.id) < '.  $userCount)
+            ->select(['form.id', 'form.title', DB::raw('count(response.id) as count')])
+            ->where('form.id' , '=', $request->id)
+            ->get();
+
+        if (count($formsWaiting) > 0) {
+            return view('evaluation.forbidden');
+        }
+
+        $form = Form::where('id', $request->id)->first();
         $responses = Evaluation::where('form_id', $request->id)->get();
         $respUser = [];
         foreach ($responses as $response) {
@@ -78,7 +96,26 @@ class EvaluationController extends Controller
                 }
             }
         }
-        dd($respUser);
+        $users = User::get();
+        $questions = Question::where('form_id', '=', $request->id)->get();
+        $usersList = [];
+        $questionsList = [];
+        foreach  ($users as $user) {
+            $usersList[$user->id] = $user->name;
+        }
+        foreach  ($questions as $question) {
+            $questionsList[$question->id] = $question->question;
+        }
+
+        return view(
+            'evaluation.show',
+            [
+                'responses' => $respUser,
+                'users' => $usersList,
+                'questions' => $questionsList,
+                'form' => $form
+            ]
+        );
     }
 
 }

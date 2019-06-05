@@ -12,27 +12,31 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("user")->insert(
+        DB::table("users")->insert(
             [
                 [
                     'name'      => 'Juliana Lourdes',
-                    'login'     => 'juliana.lourdes@plataforma13.com.br',
+                    'email'     => 'juliana.lourdes@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Pedro Emiliano',
-                    'login'     => 'pedro.emiliano@plataforma13.com.br',
+                    'email'     => 'pedro.emiliano@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Eduardo Oliveira',
-                    'login'     => 'eduardoo@plataforma13.com.br',
+                    'email'     => 'eduardoo@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 0
                 ],
                 [
                     'name'      => 'Marco Farnezi',
-                    'login'     => 'marco.farnezi@plataforma13.com.br',
+                    'email'     => 'marco.farnezi@plataforma13.com.br',
                     'password'  => bcrypt('123'),
+                    'is_admin'  => 1
                 ],
                /* [
                     'name'      => 'Luiz Gama',

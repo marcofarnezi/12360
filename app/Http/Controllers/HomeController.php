@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +34,31 @@ class HomeController extends Controller
             ->select('form.id')
         )->get();
 
-        return view('home', ['forms' => $forms]);
+        $userCount = User::count();
+        
+        
+        $formsResponsed = DB::table('form')
+            ->join('response', 'form.id', '=', 'response.form_id')
+            ->groupBy('form.id', 'form.title')
+            ->havingRaw('count(response.id) = '.  $userCount)
+            ->select(['form.id', 'form.title'])
+            ->get();
+
+        $formsWaiting = DB::table('form')
+            ->join('response', 'form.id', '=', 'response.form_id')
+            ->groupBy('form.id', 'form.title')
+            ->havingRaw('count(response.id) < '.  $userCount)
+            ->select(['form.id', 'form.title', DB::raw('count(response.id) as count')])
+            ->get();
+
+        return view(
+            'home',
+            [
+                'forms' => $forms,
+                'formsResponsed' => $formsResponsed,
+                'formsWaiting' => $formsWaiting,
+                'userCount' => $userCount
+            ]
+        );
     }
 }

@@ -15,9 +15,9 @@ class EvaluationCreateTable extends Migration
     {
         Schema::create('evaluation', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->int('question_id');
-            $table->int('user_id');
-            $table->int('form_id');
+            $table->integer('question_id');
+            $table->integer('user_id');
+            $table->integer('form_id');
             $table->string('response');
         });
     }
