@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder
                     'password'  => bcrypt('123'),
                     'is_admin'  => 1
                 ],
-               /* [
+                [
                     'name'      => 'Luiz Gama',
                     'login'     => 'luiz.gama@plataforma13.com.br',
                     'password'  => bcrypt('123'),
@@ -158,7 +158,7 @@ class UsersTableSeeder extends Seeder
                     'name'      => 'Justina Peixoto',
                     'login'     => 'justina.peixoto@plataforma13.com.br',
                     'password'  => bcrypt('123'),
-                ]*/
+                ]
             ]
         );
     }
